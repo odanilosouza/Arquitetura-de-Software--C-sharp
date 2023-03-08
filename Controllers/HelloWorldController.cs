@@ -6,9 +6,9 @@ namespace BSIStore.Controllers
     public class HelloWorldController : Controller
     {
         //  /HelloWorld
-        public string Index()
+        public IActionResult Index()
         {
-            return "Essa é uma ação principal...";
+            return View();
         }
 
         //  /HelloWorld/Welcome
@@ -16,9 +16,12 @@ namespace BSIStore.Controllers
         {
             return "Ação do método Welcome";
         }*/
-        public string Welcome(string nome, int ID=1)
+        public IActionResult Welcome(string nome, int ID=1)
         {
-            return HtmlEncoder.Default.Encode($"Nome: {nome}, ID: {ID}");
+           ViewData["Mensagem"] = "Ola "+nome;
+           ViewData["ID"] = ID;
+
+           return View();
         }
 
 

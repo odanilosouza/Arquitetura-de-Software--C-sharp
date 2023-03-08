@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "meaIuNYw7r2wWv0o5L2ACJWEGCL+DGjcOt+/vKk9xzIyaAAxarm/v30QPODzal2rQiwl8G9DmbGy7FrF0nUyzg==",
+  "dgSpecHash": "+f7DDPnYQNyRyds//H7tgtbh8rN9khyXTQ3oTrZxs2WGGEy9XUuMEUafG28xgiEvV7ub9o6wrlwtndOVTQe6kw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Laboratorio\\BSIStore\\BSIStore.csproj",
+  "projectFilePath": "C:\\Users\\Laboratorio\\bsistore\\BSIStore.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
