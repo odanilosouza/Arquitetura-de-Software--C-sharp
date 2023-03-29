@@ -15,5 +15,7 @@ namespace BSIStore.Data
         }
 
         public DbSet<BSIStore.Models.Produto> Produto { get; set; }
+
+        public DbSet<BSIStore.Models.Cliente> Cliente { get; set; }
     }
 }

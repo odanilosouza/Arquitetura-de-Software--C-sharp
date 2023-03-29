@@ -3,14 +3,16 @@ using System;
 using BSIStore.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BSIStore.Migrations
 {
     [DbContext(typeof(BSIStoreContext))]
-    partial class BSIStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20230329010327_TabelaClientes")]
+    partial class TabelaClientes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

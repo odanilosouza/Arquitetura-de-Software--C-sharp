@@ -5,7 +5,6 @@ C:\Users\Laboratorio\BSIStore\bin\Debug\net5.0\BSIStore.deps.json
 C:\Users\Laboratorio\BSIStore\bin\Debug\net5.0\BSIStore.runtimeconfig.json
 C:\Users\Laboratorio\BSIStore\bin\Debug\net5.0\BSIStore.runtimeconfig.dev.json
 C:\Users\Laboratorio\BSIStore\bin\Debug\net5.0\BSIStore.dll
-C:\Users\Laboratorio\BSIStore\bin\Debug\net5.0\ref\BSIStore.dll
 C:\Users\Laboratorio\BSIStore\bin\Debug\net5.0\BSIStore.pdb
 C:\Users\Laboratorio\BSIStore\bin\Debug\net5.0\BSIStore.Views.dll
 C:\Users\Laboratorio\BSIStore\bin\Debug\net5.0\BSIStore.Views.pdb
@@ -18,7 +17,6 @@ C:\Users\Laboratorio\BSIStore\obj\Debug\net5.0\BSIStore.MvcApplicationPartsAssem
 C:\Users\Laboratorio\BSIStore\obj\Debug\net5.0\BSIStore.RazorAssemblyInfo.cache
 C:\Users\Laboratorio\BSIStore\obj\Debug\net5.0\BSIStore.RazorAssemblyInfo.cs
 C:\Users\Laboratorio\BSIStore\obj\Debug\net5.0\staticwebassets\BSIStore.StaticWebAssets.Manifest.cache
-C:\Users\Laboratorio\BSIStore\obj\Debug\net5.0\staticwebassets\BSIStore.StaticWebAssets.xml
 C:\Users\Laboratorio\BSIStore\obj\Debug\net5.0\scopedcss\bundle\BSIStore.styles.css
 C:\Users\Laboratorio\BSIStore\obj\Debug\net5.0\BSIStore.TagHelpers.input.cache
 C:\Users\Laboratorio\BSIStore\obj\Debug\net5.0\BSIStore.TagHelpers.output.cache
@@ -170,3 +168,9 @@ C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Produtos\Delete.cshtm
 C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Produtos\Details.cshtml.g.cs
 C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Produtos\Edit.cshtml.g.cs
 C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Produtos\Index.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\refint\BSIStore.dll
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Clientes\Create.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Clientes\Delete.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Clientes\Details.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Clientes\Edit.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Clientes\Index.cshtml.g.cs
