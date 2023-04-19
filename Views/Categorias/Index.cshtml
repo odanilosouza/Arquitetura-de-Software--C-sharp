@@ -1,4 +1,4 @@
-@model IEnumerable<BSIStore.Models.Produto>
+@model IEnumerable<BSIStore.Models.Categoria>
 
 @{
     ViewData["Title"] = "Index";
@@ -15,15 +15,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Descricao)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.validade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.preco)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -32,15 +23,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.validade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.preco)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

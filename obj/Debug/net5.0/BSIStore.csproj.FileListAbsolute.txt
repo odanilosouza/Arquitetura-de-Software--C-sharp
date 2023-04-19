@@ -174,3 +174,8 @@ C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\refint\BSIStore.dll
 C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\BSIStore.pdb
 C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\BSIStore.genruntimeconfig.cache
 C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\ref\BSIStore.dll
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Categorias\Create.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Categorias\Delete.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Categorias\Details.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Categorias\Edit.cshtml.g.cs
+C:\Users\Laboratorio\bsistore\obj\Debug\net5.0\Razor\Views\Categorias\Index.cshtml.g.cs

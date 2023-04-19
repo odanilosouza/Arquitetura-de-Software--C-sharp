@@ -10,23 +10,22 @@ using BSIStore.Models;
 
 namespace BSIStore.Controllers
 {
-    public class ProdutosController : Controller
+    public class CategoriasController : Controller
     {
         private readonly BSIStoreContext _context;
 
-        public ProdutosController(BSIStoreContext context)
+        public CategoriasController(BSIStoreContext context)
         {
             _context = context;
         }
 
-        // GET: Produtos
+        // GET: Categorias
         public async Task<IActionResult> Index()
         {
-            var BSIStoreContext = _context.Produto.Include(p => p.Categoria);
-            return View(await BSIStoreContext.ToListAsync());
+            return View(await _context.Categoria.ToListAsync());
         }
 
-        // GET: Produtos/Details/5
+        // GET: Categorias/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,39 +33,39 @@ namespace BSIStore.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produto
+            var categoria = await _context.Categoria
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (produto == null)
+            if (categoria == null)
             {
                 return NotFound();
             }
 
-            return View(produto);
+            return View(categoria);
         }
 
-        // GET: Produtos/Create
+        // GET: Categorias/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Produtos/Create
+        // POST: Categorias/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Descricao,validade,categoria,preco")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id,Descricao")] Categoria categoria)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(produto);
+                _context.Add(categoria);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(produto);
+            return View(categoria);
         }
 
-        // GET: Produtos/Edit/5
+        // GET: Categorias/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,22 +73,22 @@ namespace BSIStore.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produto.FindAsync(id);
-            if (produto == null)
+            var categoria = await _context.Categoria.FindAsync(id);
+            if (categoria == null)
             {
                 return NotFound();
             }
-            return View(produto);
+            return View(categoria);
         }
 
-        // POST: Produtos/Edit/5
+        // POST: Categorias/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao,validade,categoria,preco")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao")] Categoria categoria)
         {
-            if (id != produto.Id)
+            if (id != categoria.Id)
             {
                 return NotFound();
             }
@@ -98,12 +97,12 @@ namespace BSIStore.Controllers
             {
                 try
                 {
-                    _context.Update(produto);
+                    _context.Update(categoria);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProdutoExists(produto.Id))
+                    if (!CategoriaExists(categoria.Id))
                     {
                         return NotFound();
                     }
@@ -114,10 +113,10 @@ namespace BSIStore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(produto);
+            return View(categoria);
         }
 
-        // GET: Produtos/Delete/5
+        // GET: Categorias/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -125,30 +124,30 @@ namespace BSIStore.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produto
+            var categoria = await _context.Categoria
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (produto == null)
+            if (categoria == null)
             {
                 return NotFound();
             }
 
-            return View(produto);
+            return View(categoria);
         }
 
-        // POST: Produtos/Delete/5
+        // POST: Categorias/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var produto = await _context.Produto.FindAsync(id);
-            _context.Produto.Remove(produto);
+            var categoria = await _context.Categoria.FindAsync(id);
+            _context.Categoria.Remove(categoria);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProdutoExists(int id)
+        private bool CategoriaExists(int id)
         {
-            return _context.Produto.Any(e => e.Id == id);
+            return _context.Categoria.Any(e => e.Id == id);
         }
     }
 }

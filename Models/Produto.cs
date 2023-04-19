@@ -15,5 +15,8 @@ namespace BSIStore.Models
         [Display(Name="Preço")]
         [Column(TypeName = "decimal(18,2)")]      
         public decimal preco {get; set;}
+
+        // Atributo de Relacionamento
+        public virtual Categoria Categoria {get; set;}
     }
 }
