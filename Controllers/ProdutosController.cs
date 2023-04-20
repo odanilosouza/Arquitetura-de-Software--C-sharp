@@ -35,6 +35,7 @@ namespace BSIStore.Controllers
             }
 
             var produto = await _context.Produto
+            .Include(p => p.Categoria)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {
@@ -47,6 +48,8 @@ namespace BSIStore.Controllers
         // GET: Produtos/Create
         public IActionResult Create()
         {
+            //Consultar categorias cadastradas no DB
+            ViewData["Categorias"] = new SelectList(_context.Categoria, "Id", "Descricao");
             return View();
         }
 
