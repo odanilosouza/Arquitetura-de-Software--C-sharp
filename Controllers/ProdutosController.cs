@@ -58,7 +58,7 @@ namespace BSIStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Descricao,validade,categoria,preco")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id,Descricao,validade,CategoriaId,preco")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -66,8 +66,11 @@ namespace BSIStore.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Categorias"] = new SelectList(
+                _context.Categoria, "Id", "Id",produto.CategoriaId
+                );
             return View(produto);
-        }
+        } 
 
         // GET: Produtos/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -77,11 +80,15 @@ namespace BSIStore.Controllers
                 return NotFound();
             }
 
-            var produto = await _context.Produto.FindAsync(id);
+            var produto = await _context.Produto.Include(p => p.Categoria)
+            .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {
                 return NotFound();
             }
+              ViewData["Categorias"] = new SelectList(
+                _context.Categoria, "Id", "Descricao",produto.CategoriaId
+                );
             return View(produto);
         }
 
@@ -90,7 +97,7 @@ namespace BSIStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao,validade,categoria,preco")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao,validade,CategoriaId,preco")] Produto produto)
         {
             if (id != produto.Id)
             {
@@ -117,6 +124,9 @@ namespace BSIStore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Categorias"] = new SelectList(
+                _context.Categoria, "Id", "Id", produto.CategoriaId
+            );
             return View(produto);
         }
 
@@ -129,6 +139,7 @@ namespace BSIStore.Controllers
             }
 
             var produto = await _context.Produto
+                .Include(p => p.Categoria)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {

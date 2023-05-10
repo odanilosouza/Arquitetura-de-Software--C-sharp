@@ -23,6 +23,7 @@ namespace BSIStore.Controllers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Categoria.ToListAsync());
+            
         }
 
         // GET: Categorias/Details/5
@@ -34,6 +35,7 @@ namespace BSIStore.Controllers
             }
 
             var categoria = await _context.Categoria
+                .Include(c => c.Produtos)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (categoria == null)
             {

@@ -11,7 +11,10 @@ namespace BSIStore.Models
         public string Descricao {get; set;}
         [DataType(DataType.Date)]
         public DateTime validade {get; set;}
-        public string categoria {get; set;} 
+         public string categoria {get; set;}
+          [Display(Name="Categoria")] 
+        public int CategoriaId {get; set;}
+
         [Display(Name="Preço")]
         [Column(TypeName = "decimal(18,2)")]      
         public decimal preco {get; set;}

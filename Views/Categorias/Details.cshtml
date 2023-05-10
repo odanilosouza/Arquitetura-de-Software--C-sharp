@@ -19,6 +19,26 @@
     </dl>
 </div>
 <div>
+    <div>
+        <ul>
+            @foreach (var item in Model.Produtos) 
+            {   
+                <li>
+                @Html.DisplayFor(modeItem => item.Descricao)
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div>
+        
+        <p>Quantidade de itens na categoria
+         @Html.DisplayFor(model => model.Produtos.Count)
+         </p>
+         
+    </div>
+
+
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
